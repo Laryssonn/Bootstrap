@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Curso de bootstrap 3</title>
+    <meta name="description" content="curso de bootstrap 3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="">
+		<div class="container">
+			<button id="pause">Pausar</button>
+			<button id="anterior">Anterior</button>
+			<button id="proximo">Proximo</button>
+			
+			<input type="text" id="number" value="0">
+			<button id="start">Iniciar</button>
+			
+			<div id="carousel"class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carousel" data-slide-to="0"class="active"></li>
+					<li data-target="#carousel" data-slide-to="1"></li>
+					<li data-target="#carousel" data-slide-to="2"></li>
+					<li data-target="#carousel" data-slide-to="3"></li>
+				</ol>	
+				
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="_imagens/glass-quadro-homem-mulher.jpg" alt="">
+						<div class="carousel-caption">
+							Primeiro Slide
+						</div>
+					</div>	
+					
+					<div class="item">
+						<img src="_imagens/galeria-02.jpg" alt="">
+						<div class="carousel-caption">
+							Segundo Slide
+						</div>
+					</div>
+					
+					<div class="item">
+						<img src="_imagens/galeria-03.jpg" alt="">
+						<div class="carousel-caption">
+							Terceiro Slide
+						</div>
+					</div>		
+					
+					<div class="item">
+						<img src="_imagens/jornal.png" alt="">
+						<div class="carousel-caption">
+							Terceiro Slide
+						</div>
+					</div>		
+						
+					
+				</div><!--Carousel Inner-->
+				<a href="#carousel" class="left carousel-control"data-slide="prev">
+					<i class="glyphicon glyphicon-chevron-left"></i>
+				</a>	
+				<a href="#carousel" class="right carousel-control"data-slide="next">
+					<i class="glyphicon glyphicon-chevron-right"></i>
+				</a>	
+				
+			</div><!--Carousel-->
+		</div>
+	</div>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+	var btn_proximo  = $('#proximo');
+	var btn_anterior = $('#anterior');
+	var btn_pause    = $('#pause');
+	var btn_start    = $('#start');
+	var btn_input    = $('#number');
+	var $carousel     = $('#carousel');
+	
+	
+	btn_pause.on('click', function(){
+			$carousel.carousel('pause');	
+	});
+	btn_proximo.on('click', function(){
+			$carousel.carousel('next');	
+	});
+	
+	btn_anterior.on('click', function(){
+			$carousel.carousel('prev');	
+	});
+	
+	btn_start.on('click', function(){
+			$carousel.carousel(parseInt(btn_input.val()));	
+	});
+</script>
+
+
+</body>
+</html>

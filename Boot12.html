@@ -10,10 +10,26 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-		
+			<button data-toggle="popover"  id="pop" data-content="Hello Word" title="Mensagem">
+				Ok
+			</button>
+			<button id="pop2">
+				chamar
+			</button>
 		</div>
 	</div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+	$('[data-toggle="popover"]').popover({
+		delay:0,
+		placement:'bottom'
+	});
+	
+	$('#pop2').on('click',function(){
+		$('#pop').popover("show");
+	
+	})
+</script>
 </body>
 </html>
